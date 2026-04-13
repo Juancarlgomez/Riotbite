@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,16 +7,21 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Montserrat", sans-serif;
+    background-color: #0D0D0D;
+    color: #ffffff;
+    accent-color: #FF007F;
 }
 
 .navbar {
     display: flex;
     max-width: 100%;
     align-items: center;
-    background-color: #ff4d4d;
+    /** test color **/
+    /* background-color: #ff4d4d;   */
     height: 4rem;
     margin: 0 0 2rem 0;
+    border-bottom: 2px solid #ffffff;
 
     & ul {
         list-style: none;
@@ -22,27 +29,102 @@ body {
     }
 
     & li {
-        margin: 0 1rem;
         /* border: 4px solid pink; */
         padding: 0 2rem;
     }
 
     & .logo {
-        width: 30lvw;
+        width: 200lvw;
+        margin-left: 2rem;
     }
 
     & .nav-links {
-        width: 75vw;
+        width: 100%;
+        justify-content: flex-start;
 
     }
 }
 
 .nav-link {
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
 }
 
 .active {
     font-weight: bold;
-    color: #1fd812;
+    color: #39FF14;
+}
+
+#hero {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+    margin: 0 3rem 2rem 3rem;
+    justify-content: center;
+
+    & ::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: hsl(330, 100%, 50%, 0.3);
+        z-index: -1;
+    }
+
+
+    & .bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+
+    }
+
+    & h1 {
+        font-family: "Bebas Neue", Arial;
+        letter-spacing: 0.15rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-size: 3rem;
+    }
+
+    & button {
+        position: absolute;
+        text-transform: uppercase;
+        font-weight: 900;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 12rem;
+        height: 5rem;
+        font-size: 1.25rem;
+        background-color: #39FF14;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+}
+
+.description {
+    margin: 0 3rem;
+    line-height: 1.5;
+    height: 15vh;
+}
+
+footer {
+    font-size: smaller;
+    text-align: center;
+    padding: 1rem;
+    background-color: #0D0D0D;
+    color: #ffffff;
+    justify-content: last baseline;
 }
