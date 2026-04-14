@@ -120,6 +120,10 @@ body {
     height: 15vh;
 }
 
+.about {
+height: 78vh;
+}
+
 h1 {
     font-family: "Bebas Neue", Arial;
     letter-spacing: 0.15rem;
