@@ -129,6 +129,27 @@ main p {
 height: 78vh;
 }
 
+.flex {
+    display: flex;
+    align-items: flex-end;
+    
+    >h3 {
+        font-size: 1.25rem;
+        position: relative;
+        display: flex;
+        align-items: end;
+        height: 35vh;
+    }
+}
+
+.about-image {
+    position: relative;
+    height: 40vh;
+    object-fit: cover;
+    margin: 0 0 1rem 0;
+    left: 10rem;
+}
+
 h1 {
     font-family: "Bebas Neue", Arial;
     letter-spacing: 0.15rem;
