@@ -10,7 +10,6 @@ body {
     font-family: "Montserrat", sans-serif;
     background-color: #0D0D0D;
     color: #ffffff;
-    accent-color: #FF007F;
 }
 
 .navbar {
@@ -185,10 +184,13 @@ h3 {
     >.flex {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        height: 60vh;
+        height: 68vh;
         width: 65vw;
         overflow-x: scroll;
-        overflow-y: hidden;
+
+        &::-webkit-scrollbar {
+            height: 45px;
+        }
     }
 
 }
@@ -198,6 +200,8 @@ h3 {
 }
 
 .product-card {
+    cursor: pointer;
+    position: relative;
     border: 2px solid #FF007F;
     border-radius: 8px;
     padding: 1rem;
@@ -207,19 +211,27 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.3s ease;
 
     &::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
         inset: 0;
+        height: 100%;
+        width: 100%;
+        background: hsl(330, 100%, 50%);
         z-index: -1;
+        transition: all 0.3s ease;
     }
 
     &:hover {
-        cursor: pointer;
+        background: hsl(330, 100%, 50%, 0.1);
         box-shadow: 0 0 10px 4px #FF007F;
+        transform: translateY(-.5rem);
+
+        &::before {
+            background: hsl(330, 100%, 50%, 0.0);
+        }
     }
 
     & h2 {
@@ -229,9 +241,14 @@ h3 {
     }
 
     & img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         object-fit: cover;
         width: 100%;
         height: auto;
+        z-index: -2;
         margin: 0 0 1rem 0;
     }
 }
