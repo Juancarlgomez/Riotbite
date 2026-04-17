@@ -126,13 +126,13 @@ main p {
 }
 
 .about {
-height: 78vh;
+    height: 78vh;
 }
 
 .flex {
     display: flex;
     align-items: flex-end;
-    
+
     >h3 {
         font-size: 1.25rem;
         position: relative;
@@ -149,10 +149,10 @@ height: 78vh;
     align-items: center;
     height: 100%;
 
-        & p {
-            text-align: center;
-            padding: 0;
-        }
+    & p {
+        text-align: center;
+        padding: 0;
+    }
 }
 
 .about-image {
@@ -181,10 +181,20 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    >.flex {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        height: 60vh;
+        width: 65vw;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
 }
 
 .products {
-  height: 80vh;
+    height: 80vh;
 }
 
 .product-card {
@@ -192,11 +202,20 @@ h3 {
     border-radius: 8px;
     padding: 1rem;
     margin: 0 1rem;
-    width: 30%;
-    height: 50vh;
+    height: 60vh;
+    width: 20vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        inset: 0;
+        z-index: -1;
+    }
 
     &:hover {
         cursor: pointer;
@@ -209,7 +228,7 @@ h3 {
         margin: 0 0 1rem 0;
     }
 
-     & img {
+    & img {
         object-fit: cover;
         width: 100%;
         height: auto;
