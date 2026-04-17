@@ -202,7 +202,7 @@ h3 {
 .product-card {
     cursor: pointer;
     position: relative;
-    border: 2px solid #FF007F;
+    border: 2px solid  #39FF14;
     border-radius: 8px;
     padding: 1rem;
     margin: 0 1rem;
@@ -227,6 +227,7 @@ h3 {
     &:hover {
         background: hsl(330, 100%, 50%, 0.1);
         box-shadow: 0 0 10px 4px #FF007F;
+        border: 2px solid #FF007F;
         transform: translateY(-.5rem);
 
         &::before {
