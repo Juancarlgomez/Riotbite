@@ -166,12 +166,13 @@ main {
 
 .about .flex {
     width: 80vw;
+    justify-content: center;
 }
 
 .flex {
     display: flex;
     align-items: flex-end;
-    justify-content: center;
+
 
     >h3 {
         font-size: 1.25rem;
