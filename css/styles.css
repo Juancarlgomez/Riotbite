@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
 body {
@@ -16,8 +17,6 @@ body {
     display: flex;
     max-width: 100%;
     align-items: center;
-    /** test color **/
-    /* background-color: #ff4d4d;   */
     height: 4rem;
     margin: 0 0 2rem 0;
     border-bottom: 2px solid #ffffff;
@@ -28,8 +27,10 @@ body {
     }
 
     & li {
-        /* border: 4px solid pink; */
+        display: flex;
+        justify-content: center;
         padding: 0 2rem;
+        width: 133px;
     }
 
     & .logo {
@@ -40,6 +41,14 @@ body {
     & .nav-links {
         width: 100%;
         justify-content: flex-start;
+
+    }
+
+    a:hover {
+        color: #FF007F;
+        text-decoration: underline 2px #FF007F;
+        font-weight: 800;
+        text-underline-offset: 0.25rem;
 
     }
 }
