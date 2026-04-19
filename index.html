@@ -10,12 +10,19 @@
 </head>
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
-        <ul class="logo">
+    <nav class="navbar">
+       <ul class="logo">
             <!-- Make this a logo in the future -->
             <li> Riot Bite </li>
-        </ul>
-        <ul class="nav-links">
+       </ul>
+
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
             <li><a href="/" class="nav-link">Home</a></li>
             <li><a href="products.html" class="nav-link">Products</a></li>
             <li><a href="about.html" class="nav-link">About</a></li>

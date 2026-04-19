@@ -10,12 +10,19 @@
 </head>
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
-        <ul class="logo">
+    <nav class="navbar">
+       <ul class="logo">
             <!-- Make this a logo in the future -->
             <li> Riot Bite </li>
-        </ul>
-        <ul class="nav-links">
+       </ul>
+
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
             <li><a href="/" class="nav-link">Home</a></li>
             <li><a href="products.html" class="nav-link">Products</a></li>
             <li><a href="about.html" class="nav-link">About</a></li>
@@ -23,10 +30,12 @@
         </ul>
     </nav>
     <main class="about">
-        <h1 class="centered">About Riot Bite Candy</h1>
+        <h1 class="centered">About Us</h1>
+        <div class="centered">
         <div class="flex">
             <h3>Welcome to Riot Bite Candy, <br> where excitement meets flavor!</h3>
             <img src="assets/about.png" alt="About Riot Bite Candy" class="about-image">
+        </div>
         </div>
         <p>Our story began with a simple idea: to create candies that deliver an unforgettable experience. Inspired by
             the thrill of a real riot, we set out to develop a line of treats that would ignite your taste buds and
