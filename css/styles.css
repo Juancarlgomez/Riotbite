@@ -44,6 +44,42 @@ body {
     }
 }
 
+
+.menu-toggle {
+    display: none;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    z-index: 30;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #ffffff;
+    margin: 5px 0;
+    transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.25s ease;
+}
+
+/* Hamburger -> X */
+.menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+    background-color: #39FF14;
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: #39FF14;
+}
+
 .nav-link {
     text-decoration: none;
     color: #ffffff;
@@ -113,9 +149,13 @@ body {
 
 }
 
-main p {
-    margin: 0 0 1rem 0;
-    padding: 0 3rem;
+main {
+    min-height: 80vh;
+
+    p {
+        margin: 0 0 1rem 0;
+        padding: 0 3rem;
+    }
 }
 
 .description {
@@ -124,13 +164,14 @@ main p {
     height: 15vh;
 }
 
-.about {
-    height: 78vh;
+.about .flex {
+    width: 80vw;
 }
 
 .flex {
     display: flex;
     align-items: flex-end;
+    justify-content: center;
 
     >h3 {
         font-size: 1.25rem;
@@ -159,7 +200,6 @@ main p {
     height: 40vh;
     object-fit: cover;
     margin: 0 0 1rem 0;
-    left: 10rem;
 }
 
 h1 {
@@ -180,34 +220,36 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    >.flex {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        height: 68vh;
-        width: 65vw;
-        overflow-x: scroll;
-
-        &::-webkit-scrollbar {
-            height: 45px;
-        }
-    }
-
 }
 
 .products {
     height: 80vh;
+
+    .centered {
+        padding: 0 5rem;
+
+        >.flex {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            height: 68vh;
+            overflow-x: scroll;
+
+            &::-webkit-scrollbar {
+                height: 45px;
+            }
+        }
+    }
 }
 
 .product-card {
     cursor: pointer;
     position: relative;
-    border: 2px solid  #39FF14;
+    border: 2px solid #39FF14;
     border-radius: 8px;
     padding: 1rem;
     margin: 0 1rem;
     height: 60vh;
-    width: 20vw;
+    width: 28vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -254,13 +296,111 @@ h3 {
     }
 }
 
-
-
 footer {
     font-size: smaller;
     text-align: center;
     padding: 1rem;
     background-color: #0D0D0D;
     color: #ffffff;
-    justify-content: last baseline;
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 4rem;
+        padding: 0 1rem;
+
+        .logo {
+            width: 10rem;
+            margin-left: 0;
+        }
+
+        .nav-links {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            right: 1rem;
+            width: min(18rem, 92vw);
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            padding: 0.75rem 1rem;
+            background: #0D0D0D;
+            border: 2px solid #39FF14;
+            border-radius: 8px;
+            z-index: 25;
+            opacity: 0;
+            transform: translateY(-0.5rem);
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .nav-links.open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #hero {
+        height: 35vh;
+
+        & h1 {
+            font-size: 2rem;
+        }
+
+        & button {
+            width: 10rem;
+            height: 4rem;
+            font-size: 1rem;
+        }
+    }
+
+    .description {
+        height: auto;
+    }
+
+    .products .centered {
+
+        width: 100%;
+
+        >.flex {
+            display: block;
+            height: auto;
+        }
+    }
+
+    .products,
+    .about {
+        height: auto;
+    }
+
+    .product-card {
+        width: 90%;
+        margin: 1rem auto;
+    }
+
+    .about .flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        h3 {
+            height: max-content;
+        }
+    }
+
+    .about-image {
+        position: relative;
+        height: 25vh;
+        width: fit-content;
+        left: 0;
+    }
 }
