@@ -253,7 +253,7 @@ h3 {
         >.flex {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            height: 68vh;
+            height: 65vh;
             overflow-x: scroll;
             overflow-y: hidden;
 
