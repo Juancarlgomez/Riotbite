@@ -205,17 +205,22 @@ main {
         position: absolute;
         bottom: -3rem;
         transition: all 0.3s ease;
-        background-color: hsl(330, 100%, 50% , 0.5);
+        background-color: hsl(330, 100%, 50%, 0.5);
         margin: 0;
-            padding: 1rem 1rem;
+        padding: 1rem 1rem;
     }
 }
 
 .about-image {
     position: relative;
-    height: 40vh;
+    bottom: 0;
+    left: 30vw;
+    width: 30vw;
     object-fit: cover;
     margin: 0 0 1rem 0;
+    opacity: 0;
+    z-index: 100;
+    animation: image-fade-in 1s ease forwards;
 }
 
 h1 {
@@ -236,6 +241,8 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 
 .glitch-effect {
@@ -257,7 +264,7 @@ h3 {
             overflow-x: scroll;
             overflow-y: hidden;
 
-             &::-webkit-scrollbar {
+            &::-webkit-scrollbar {
                 height: 2rem;
                 width: 100%;
             }
@@ -372,6 +379,15 @@ footer {
 
     100% {
         text-shadow: 3px 4px #FF007F, -2px 3px 0px #39FF14;
+    }
+
+}
+
+@keyframes image-fade-in {
+
+    to {
+        opacity: 1;
+        left: 0;
     }
 
 }
