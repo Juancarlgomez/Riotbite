@@ -255,10 +255,33 @@ h3 {
             grid-template-columns: repeat(5, 1fr);
             height: 68vh;
             overflow-x: scroll;
+            overflow-y: hidden;
 
-            &::-webkit-scrollbar {
-                height: 45px;
+             &::-webkit-scrollbar {
+                height: 2rem;
+                width: 100%;
             }
+
+            &::-webkit-scrollbar-track {
+                background: #0D0D0D;
+                border-top: 2px solid #39FF14;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: linear-gradient(90deg, #39FF14, #FF007F);
+                border-radius: 8px;
+                border: 2px solid #39FF14;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(90deg, #FF007F, #39FF14);
+                box-shadow: 0 0 10px #FF007F;
+            }
+
+            /* Firefox */
+            scrollbar-color: #39FF14 #0D0D0D;
+            scrollbar-width: thick;
+
         }
     }
 }
