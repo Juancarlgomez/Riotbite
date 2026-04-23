@@ -232,6 +232,12 @@ h3 {
     align-items: center;
 }
 
+.glitch-effect {
+    text-shadow: none;
+    animation: glitch 500ms cubic-bezier(0.4, 0, 0.64, 0.46) forwards;
+
+}
+
 .products {
     height: 80vh;
 
@@ -313,6 +319,27 @@ footer {
     padding: 1rem;
     background-color: #0D0D0D;
     color: #ffffff;
+}
+
+@keyframes glitch {
+
+    25% {
+        text-shadow: 7px -7px #FF007F, -6px 9px 0px #39FF14;
+    }
+
+    50% {
+        text-shadow: -3px -4px #FF007F, -5px 5px 0px #39FF14;
+
+    }
+
+    75% {
+        text-shadow: 0px 0px #FF007F, 0px 0px 0px #39FF14;
+    }
+
+   100% {
+        text-shadow: 3px 4px #FF007F, -2px 3px 0px #39FF14;
+    }
+
 }
 
 @media (max-width: 768px) {
