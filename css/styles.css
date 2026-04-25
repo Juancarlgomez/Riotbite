@@ -201,9 +201,8 @@ main {
 
     & p {
         text-align: center;
-        visibility: hidden;
         position: absolute;
-        bottom: -3rem;
+        bottom: -6rem;
         transition: all 0.3s ease;
         background-color: hsl(330, 100%, 50%, 0.5);
         margin: 0;
@@ -314,7 +313,7 @@ h3 {
         inset: 0;
         height: 100%;
         width: 100%;
-        background: hsl(330, 100%, 50%);
+        background: hsl(330, 100%, 50%, 0.5);
         z-index: -1;
         transition: all 0.3s ease;
     }
@@ -330,7 +329,6 @@ h3 {
         }
 
         p {
-            visibility: visible;
             bottom: 0;
         }
     }
