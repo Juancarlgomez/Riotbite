@@ -141,19 +141,28 @@ body {
 
     & button {
         position: absolute;
-        text-transform: uppercase;
+        font-family: "Bebas Neue", Arial;
+        border-radius: 8px;
+        letter-spacing: .05rem;
         font-weight: 900;
         bottom: 2rem;
         left: 50%;
         transform: translateX(-50%);
         width: 12rem;
         height: 5rem;
-        font-size: 1.25rem;
+        font-size: 1.75rem;
         background-color: #39FF14;
         color: #ffffff;
         border: none;
         cursor: pointer;
         z-index: 2;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: #FF007F;
+            box-shadow: 0 0 10px #FF007F;
+            letter-spacing: .15rem;
+        }
     }
 
 }
