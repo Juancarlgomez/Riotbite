@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,13 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>Contact - Riot Bite Candy</title>
 </head>
+
 <body>
     <nav class="navbar">
-       <ul class="logo">
+        <ul class="logo">
             <!-- Make this a logo in the future -->
             <li> Riot Bite </li>
-       </ul>
+        </ul>
 
         <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
             <span></span>
@@ -30,11 +32,34 @@
     <main>
         <h1 class="centered">Contact Us</h1>
         <p>We'd love to hear from you! Reach out to us through any of the following channels:</p>
-        <!-- Will be implemented in the next assignment -->
+
+        <form class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Subject:</label>
+            <select id="subject" name="subject" required>
+                <option value="">--Please choose an option--</option>
+                <option value="general">General Inquiry</option>
+                <option value="product">Product Feedback</option>
+                <option value="support">Customer Support</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
     </main>
     <footer>
         <p>&copy; 2026 Riot Bite Candy. All rights reserved. All products are for entertainment purposes only.</p>
     </footer>
 
 </body>
+
 </html>
