@@ -425,6 +425,11 @@ footer {
     gap: 1rem;
 }
 
+/*Currently, only works with Chromium browsers */
+@view-transition { 
+    navigation: auto; 
+}
+
 @keyframes glitch {
 
     0% {
