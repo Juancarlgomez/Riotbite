@@ -1,32 +1,32 @@
 // Highlight active nav link
 document.querySelectorAll(".nav-link").forEach((link) => {
-    if (link.href === window.location.href) {
-        link.classList.add("active");
-        link.setAttribute("aria-current", "page");
-    }
+  if (link.href === window.location.href) {
+    link.classList.add("active");
+    link.setAttribute("aria-current", "page");
+  }
 });
 
 // Enable horizontal scrolling with mouse wheel on desktop
 const flexContainer = document.querySelector('.flex');
 
 if (flexContainer) {
-    const handleWheel = (event) => {
-        event.preventDefault();
-        flexContainer.scrollLeft += event.deltaY;
-    };
+  const handleWheel = (event) => {
+    event.preventDefault();
+    flexContainer.scrollLeft += event.deltaY;
+  };
 
-    const mediaQuery = window.matchMedia('(min-width: 769px)');
+  const mediaQuery = window.matchMedia('(min-width: 769px)');
 
-    const updateWheelListener = () => {
-        flexContainer.removeEventListener('wheel', handleWheel);
+  const updateWheelListener = () => {
+    flexContainer.removeEventListener('wheel', handleWheel);
 
-        if (mediaQuery.matches) {
-            flexContainer.addEventListener('wheel', handleWheel, { passive: false });
-        }
-    };
+    if (mediaQuery.matches) {
+      flexContainer.addEventListener('wheel', handleWheel, { passive: false });
+    }
+  };
 
-    updateWheelListener();
-    mediaQuery.addEventListener('change', updateWheelListener);
+  updateWheelListener();
+  mediaQuery.addEventListener('change', updateWheelListener);
 }
 
 
@@ -50,3 +50,9 @@ if (menuToggle && navLinks) {
     });
   });
 }
+
+// Glitch effect on h1 elements
+const glitchElements = document.querySelectorAll('h1');
+glitchElements.forEach((element) => {
+  element.classList.add('glitch-effect');
+});
