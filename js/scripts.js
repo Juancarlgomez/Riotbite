@@ -56,3 +56,11 @@ const glitchElements = document.querySelectorAll('h1');
 glitchElements.forEach((element) => {
   element.classList.add('glitch-effect');
 });
+
+// netlify button fix
+const ctaButton = document.querySelector('.cta-button');
+if (ctaButton) {
+  ctaButton.addEventListener('click', () => {
+    window.location.href = 'products.html';
+  });
+}
