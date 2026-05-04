@@ -82,3 +82,19 @@ if (logoList) {
     logoList.appendChild(newItem);
   }
 }
+
+  // Simple loading overlay: hide when everything (assets, video, images) has finished loading
+  (function() {
+    const loading = document.getElementById('loading-screen');
+    if (!loading) return;
+
+    window.addEventListener('load', () => {
+      requestAnimationFrame(() => {
+        loading.classList.add('loaded');
+        // remove from DOM after transition finishes
+        setTimeout(() => {
+          if (loading.parentNode) loading.parentNode.removeChild(loading);
+        }, 700);
+      });
+    });
+  })();

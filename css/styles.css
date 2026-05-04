@@ -576,3 +576,37 @@ footer {
         z-index: 2;
     }
 }
+
+/* Loading screen */
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0D0D0D;
+    z-index: 1000;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+#loading-screen .spinner {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 6px solid rgba(255,255,255,0.12);
+    border-top-color: #39FF14;
+    animation: spin 1s linear infinite;
+    box-shadow: 0 0 20px rgba(57,255,20,0.12);
+}
+
+#loading-screen.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
