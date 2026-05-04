@@ -64,3 +64,21 @@ if (ctaButton) {
     window.location.href = 'products.html';
   });
 }
+
+// Replace logo text with an image using JavaScript because I don't want to change it in multiple pages 
+const logoList = document.querySelector('ul.logo');
+if (logoList) {
+  const existingItem = logoList.querySelector('li');
+  const newItem = document.createElement('li');
+  const logoImage = new Image();
+  logoImage.src = 'assets/logo.png';
+  logoImage.alt = 'Company Logo';
+  logoImage.className = 'logo-image';
+  newItem.appendChild(logoImage);
+
+  if (existingItem) {
+    logoList.replaceChild(newItem, existingItem);
+  } else {
+    logoList.appendChild(newItem);
+  }
+}

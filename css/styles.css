@@ -13,6 +13,13 @@ body {
     color: #ffffff;
 }
 
+.logo-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    padding: .25rem;
+}
+
 .navbar {
     display: flex;
     max-width: 100%;
