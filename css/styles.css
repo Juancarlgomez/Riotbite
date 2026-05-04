@@ -533,6 +533,7 @@ footer {
         >.flex {
             display: block;
             height: auto;
+            overflow: hidden;
         }
     }
 
@@ -543,7 +544,11 @@ footer {
 
     .product-card {
         width: 90%;
-        margin: 1rem auto;
+        margin: 2rem auto;
+        overflow: hidden;
+         p {
+            bottom: -8rem;
+         }
     }
 
     .about .flex {
@@ -561,5 +566,6 @@ footer {
         height: 25vh;
         width: fit-content;
         left: 0;
+        z-index: 2;
     }
 }
